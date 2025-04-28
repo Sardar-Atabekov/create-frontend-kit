@@ -8,8 +8,8 @@ export const Counter = () => {
   };
 
   return (
-    <div>
-      <button onClick={increment}>count is {count}</button>
+    <div  className="mt-4 flex flex-col items-center">
+      <button onClick={increment} className="bg-blue-500 text-white px-4 py-2 rounded">Сount is {count}</button>
     </div>
   );
 };

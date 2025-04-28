@@ -9,4 +9,3 @@
   },
   "include": ["src/**/*.test.ts", "src/**/*.test.tsx", "setupTests.ts"]
 }
-  ,
