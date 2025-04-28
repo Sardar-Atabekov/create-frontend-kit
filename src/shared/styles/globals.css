@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: #646cff;
+    --color-secondary: #61dafb;
+  }
+
+  body {
+    @apply bg-white text-black dark:bg-gray-900 dark:text-white;
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+  }
+
+  #root {
+    @apply min-h-screen;
+  }
+}

@@ -1,0 +1,35 @@
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  transition: filter 300ms;
+  will-change: filter;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em var(--color-primary));
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em var(--color-secondary));
+}
+
+.title {
+  font-size: 3.2em;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.card {
+  padding: 2em;
+  text-align: center;
+}
+
+.code {
+  font-weight: 700;
+  font-family: inherit;
+}
+
+.docs {
+  color: #888;
+  text-align: center;
+}

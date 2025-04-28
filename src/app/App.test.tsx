@@ -1,0 +1,24 @@
+import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
+import App from './App';
+
+describe('App', () => {
+  it('рендерит заголовок', () => {
+    render(<App />);
+    expect(screen.getByText(/Vite \+ React/i)).toBeInTheDocument();
+  });
+
+  it('рендерит подсказку для редактирования', () => {
+    render(<App />);
+    expect(
+      screen.getByText(/Edit src\/App\.tsx and save to test HMR/i),
+    ).toBeInTheDocument();
+  });
+
+  it('рендерит подсказку для документации', () => {
+    render(<App />);
+    expect(
+      screen.getByText(/Click on the Vite and React logos to learn more/i),
+    ).toBeInTheDocument();
+  });
+});
