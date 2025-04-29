@@ -1,3 +1,4 @@
+# ----------------------------------------
 # Logs
 logs
 *.log
@@ -7,18 +8,70 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# ----------------------------------------
+# Runtime data and build artifacts
+node_modules/
+dist/
+dist-ssr/
+build/
+out/
+.next/
+coverage/
+*.lcov
+test-results/
+junit.xml
 
-# Editor directories and files
+# ----------------------------------------
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# ----------------------------------------
+# TypeScript
+*.tsbuildinfo
+
+# ----------------------------------------
+# IDEs and editors
 .vscode/*
 !.vscode/extensions.json
-.idea
-.DS_Store
+!.vscode/settings.json
+.idea/
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+*.iml
+*.ipr
+*.iws
+
+# ----------------------------------------
+# System files
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+ehthumbs.db
+Icon?
+Desktop.ini
+
+# ----------------------------------------
+# Optional log and debug directories
+.pnpm-debug.log*
+.eslintcache
+.prettiercache
+
+# ----------------------------------------
+# Storybook
+storybook-static/
+
+# ----------------------------------------
+# Playwright / Cypress
+.playwright/
+cypress/videos/
+cypress/screenshots/
+
+# ----------------------------------------
+# Local config files (optional)
+*.local
