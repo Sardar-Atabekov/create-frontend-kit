@@ -5,12 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "test": "jest",
     "build": "vite build",
     "preview": "vite preview",
     "type-check": "tsc --noEmit",
-    "lint": "eslint .",
-    "format": "prettier --write .",
-    "test": "jest"
+    "lint": "node config/lint.js",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@types/styled-components": "^5.1.34",

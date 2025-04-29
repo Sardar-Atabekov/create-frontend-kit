@@ -32,6 +32,6 @@
     "typeRoots": ["./node_modules/@types", "./types"],
     "incremental": true
   },
-  "include": ["src"],
+  "include": ["src", "config/fileMock.ts"],
   "exclude": ["node_modules"]
 }

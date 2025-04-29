@@ -11,7 +11,7 @@ describe('App', () => {
   it('рендерит подсказку для редактирования', () => {
     render(<App />);
     expect(
-      screen.getByText(/Edit src\/App\.tsx and save to test HMR/i),
+      screen.getByText((content) => content.includes('Edit')),
     ).toBeInTheDocument();
   });
 

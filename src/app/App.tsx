@@ -6,8 +6,8 @@ import reactLogo from '@/shared/assets/icons/react.svg';
 
 const App: React.FC = () => {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-[#242424] text-white px-4 font-sans">
-      <div className="flex justify-center gap-8 mb-8">
+    <div className="flex min-h-screen flex-col items-center justify-center bg-[#242424] px-4 font-sans text-white">
+      <div className="mb-8 flex justify-center gap-8">
         <Logo
           href="https://vite.dev"
           src={viteLogo}
@@ -19,18 +19,26 @@ const App: React.FC = () => {
           href="https://react.dev"
           src={reactLogo}
           alt="React logo"
-          className="h-36 p-[24px] transition-[filter] duration-300 hover:drop-shadow-[0_0_2em_#61dafbaa] animate-spin-slow"
+          className="animate-spin-slow h-36 p-[24px] transition-[filter] duration-300 hover:drop-shadow-[0_0_2em_#61dafbaa]"
           data-testid="react-logo"
         />
       </div>
-      <h1 className="text-[3.2em] font-normal leading-tight mb-4">Vite + React</h1>
-      <div className="p-[2em] rounded-lg my-8">
+      <h1 className="mb-4 text-[3.2em] leading-tight font-normal">
+        Vite + React
+      </h1>
+      <div className="my-8 rounded-lg p-[2em]">
         <Counter />
         <p className="mt-4">
-          Edit <code className="font-bold text-[#646cff] text-base">src/App.tsx</code> and save to test HMR
+          Edit{' '}
+          <code className="text-base font-bold text-[#646cff]">
+            src/App.tsx
+          </code>{' '}
+          and save to test HMR
         </p>
       </div>
-      <p className="text-gray-400 mt-8">Click on the Vite and React logos to learn more</p>
+      <p className="mt-8 text-gray-400">
+        Click on the Vite and React logos to learn more
+      </p>
     </div>
   );
 };

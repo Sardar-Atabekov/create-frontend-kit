@@ -13,9 +13,9 @@ export const Logo: React.FC<LogoProps> = ({
   src,
   alt,
   className,
-  ...rest
+  'data-testid': dataTestId,
 }) => (
   <a href={href} target="_blank" rel="noopener noreferrer">
-    <img src={src} className={className} alt={alt} {...rest} />
+    <img src={src} className={className} alt={alt} data-testid={dataTestId} />
   </a>
 );
