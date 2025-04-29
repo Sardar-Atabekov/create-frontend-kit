@@ -5,7 +5,7 @@
     "esModuleInterop": true,
     "types": ["jest", "@testing-library/jest-dom"],
     "resolveJsonModule": true,
-    "module": "commonjs"
+    "module": "ESNext"
   },
   "include": ["src/**/*.test.ts", "src/**/*.test.tsx", "setupTests.ts"]
 }
