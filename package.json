@@ -1,5 +1,5 @@
 {
-  "name": "react-app-template",
+  "name": "create-frontend-kit",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -61,9 +61,12 @@
       "eslint --fix",
       "prettier --write"
     ],
-    "*.{json,md,css,scss,html}": [
-      "prettier --write",
-      "stylelint --fix"
+    "*.{css,scss}": [
+      "stylelint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md,html}": [
+      "prettier --write"
     ]
   }
 }
