@@ -28,6 +28,9 @@ jobs:
       - name: Lint
         run: npm run lint
 
+      - name: Check commit messages
+        run: npx commitlint --from=HEAD~1 --to=HEAD --verbose
+
       - name: Format check
         run: npm run format -- --check
 
