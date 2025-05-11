@@ -1,6 +1,8 @@
-import { render, screen, fireEvent } from '@testing-library/react';
-import '@testing-library/jest-dom';
+import { fireEvent, render, screen } from '@testing-library/react';
+
 import { Counter } from './counter';
+
+import '@testing-library/jest-dom';
 
 describe('Counter', () => {
   it('отображает начальное значение счетчика', () => {

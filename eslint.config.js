@@ -1,11 +1,13 @@
 import js from '@eslint/js';
-import globals from 'globals';
-import reactPlugin from 'eslint-plugin-react';
-import promisePlugin from 'eslint-plugin-promise';
-import { defineConfig } from 'eslint-define-config';
-import tseslintParser from '@typescript-eslint/parser';
-import reactHooksPlugin from 'eslint-plugin-react-hooks';
 import tseslintPlugin from '@typescript-eslint/eslint-plugin';
+import tseslintParser from '@typescript-eslint/parser';
+import { defineConfig } from 'eslint-define-config';
+import importPlugin from 'eslint-plugin-import';
+import prettierPlugin from 'eslint-plugin-prettier';
+import promisePlugin from 'eslint-plugin-promise';
+import reactPlugin from 'eslint-plugin-react';
+import reactHooksPlugin from 'eslint-plugin-react-hooks';
+import globals from 'globals';
 
 const cleanGlobals = Object.fromEntries(
   Object.entries(globals.browser).map(([k, v]) => [k.trim(), v]),
@@ -32,48 +34,63 @@ export default defineConfig(
       },
       plugins: {
         react: reactPlugin,
+        import: importPlugin,
+        promise: promisePlugin,
+        prettier: prettierPlugin,
         'react-hooks': reactHooksPlugin,
         '@typescript-eslint': tseslintPlugin,
-        promise: promisePlugin,
       },
       rules: {
-        // JavaScript базовые правила
+        // Базовые рекомендации
         ...js.configs.recommended.rules,
-
-        // React правила
         ...reactPlugin.configs.recommended.rules,
-
-        // React Hooks
         ...reactHooksPlugin.configs.recommended.rules,
-
-        // TypeScript правила
         ...tseslintPlugin.configs.recommended.rules,
-
-        // promise
         ...promisePlugin.configs.recommended.rules,
 
-        // Ваши кастомные правила
+        ...prettierPlugin.configs.recommended.rules,
+        'prettier/prettier': 'warn',
+        // Кастомные правила
         '@typescript-eslint/no-unused-vars': 'error',
         '@typescript-eslint/no-explicit-any': 'off',
-
         'react/react-in-jsx-scope': 'off',
+
+        // Продакшн-логика
         'no-console':
           process.env.NODE_ENV === 'production'
             ? ['error', { allow: ['warn', 'error'] }]
             : 'off',
         'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+
+        // Стиль кода
+        semi: ['error', 'always'],
+        quotes: ['error', 'single'],
+
+        // Сортировка импортов
+
+        // Удаление неиспользуемых импортов
+        'import/no-duplicates': 'error',
+        'import/order': 'off', // отключаем, чтобы не конфликтовал
+
+        // Ограничиваем максимальное количество строк в файле
+        'max-lines': [
+          'error',
+          { max: 300, skipBlankLines: true, skipComments: true },
+        ],
       },
       settings: {
         react: {
           version: 'detect',
         },
         'import/resolver': {
-          typescript: {},
+          typescript: {
+            project: './tsconfig.json',
+          },
         },
       },
     },
 
-    // Конфиг для тестовых файлов (Jest)
+    // Тестовые файлы
     {
       files: ['**/*.test.{js,jsx,ts,tsx}', 'config/*.js'],
       languageOptions: {
@@ -87,9 +104,9 @@ export default defineConfig(
       },
     },
 
-    // Конфиг для Node.js файлов (например, конфиги)
+    // Node.js конфиги
     {
-      files: ['*.js', '*.cjs', '*.mjs'],
+      files: ['*.js', '*.cjs', '*.mjs', 'vite.config.ts'],
       languageOptions: {
         globals: {
           ...cleanGlobals,
@@ -101,7 +118,7 @@ export default defineConfig(
       },
     },
 
-    // Конфиг для vite.config.ts (Node.js)
+    // Vite конфиги
     {
       files: ['vite.config.ts'],
       languageOptions: {
