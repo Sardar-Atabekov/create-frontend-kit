@@ -1,8 +1,10 @@
 import React from 'react';
+
+import reactLogo from '@/shared/assets/icons/react.svg';
+import viteLogo from '@/shared/assets/icons/vite.svg';
 import { Logo } from '@/shared/ui/Logo';
 import { Counter } from '@/features/counter/counter';
-import viteLogo from '@/shared/assets/icons/vite.svg';
-import reactLogo from '@/shared/assets/icons/react.svg';
+
 import styles from './styles/App.module.css';
 
 const App: React.FC = () => {

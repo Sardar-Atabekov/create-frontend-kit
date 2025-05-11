@@ -1,6 +1,8 @@
 import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
+
 import { Logo } from './Logo';
+
+import '@testing-library/jest-dom';
 
 describe('Logo', () => {
   const defaultProps = {
