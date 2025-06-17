@@ -9,9 +9,15 @@
     "build": "vite build",
     "preview": "vite preview",
     "prepare": "husky install",
+    "test:watch": "jest --watch",
     "type-check": "tsc --noEmit",
     "lint": "node config/lint.js",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "postinstall": "husky install",
+    "format-check": "prettier --check .",
+    "lint-fix": "node config/lint.js --fix",
+    "style-check": "stylelint '**/*.{css,scss}'",
+    "style-fix": "stylelint '**/*.{css,scss}' --fix"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.4",

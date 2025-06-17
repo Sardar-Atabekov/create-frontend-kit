@@ -1,13 +1,13 @@
 #root {
-  max-width: 1280px;
   margin: 0 auto;
+  max-width: 1280px;
   padding: 2rem;
   text-align: center;
 }
 
 .logo {
-  will-change: filter;
   transition: filter 300ms;
+  will-change: filter;
 }
 
 .logo:hover {
@@ -22,6 +22,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -40,10 +41,10 @@
 }
 
 .card {
-  padding: 2em;
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgb(255 255 255 / 5%);
   border-radius: 8px;
   margin: 2em 0;
+  padding: 2em;
 }
 
 .code {
