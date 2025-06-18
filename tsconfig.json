@@ -32,6 +32,6 @@
     "typeRoots": ["./node_modules/@types", "./types"],
     "incremental": true
   },
-  "include": ["src", "config"],
+  "include": ["src", "scripts"],
   "exclude": ["node_modules", "dist", "build"]
 }
